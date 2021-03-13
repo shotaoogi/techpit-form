@@ -61,6 +61,17 @@ const Basic = () => {
             control={<Radio color='primary' />}
           />
         </RadioGroup>
+        <TextField
+          fullWidth
+          className={classes.formField}
+          label={PROFILE.BIRTHDAY}
+          type='date'
+          value={profile.birthday}
+          onChange={e => handleChange({ birthday: e.target.value })}
+          InputLabelProps={{
+            shrink: true
+          }}
+        />
       </FormControl>
     </>
   );
