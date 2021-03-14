@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { TextField, Grid, InputLabel, Typography } from '@material-ui/core';
+import { TextField, Grid, InputLabel, Typography, Button } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { PROFILE } from '../domain/services/profile';
 import { RootState } from '../domain/entity/rootState';
@@ -13,6 +13,9 @@ const Career = () => {
   const careers = useSelector((state: RootState) => state.profile.careers);
   const handleChange = (member: Partial<ICareer>, i: number) => {
     dispach(profileActions.setCareer({ career: member, index: i }));
+  };
+  const handleAddCareer = () => {
+    dispach(profileActions.addCareer({}));
   };
 
   return (
@@ -73,6 +76,16 @@ const Career = () => {
           </div>
         </Fragment>
       ))}
+      <Button
+        className={classes.button}
+        onClick={handleAddCareer}
+        fullWidth
+        variant='outlined'
+      >
+        職歴を追加
+      </Button>
     </>
   );
 };
+
+export default Career;
