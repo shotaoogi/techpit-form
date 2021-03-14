@@ -8,7 +8,7 @@ import {
 } from '../../domain/services/address'
 
 export const searchAddressFromPostalcode = (code: string) => async (
-  dispach: Dispatch
+  dispatch: Dispatch
 ) => {
   if (!isCompletePostalcode(code)) return;
 
@@ -23,5 +23,5 @@ export const searchAddressFromPostalcode = (code: string) => async (
     city: result.data[0].city + result.data[0].town
   };
 
-  dispach(profileActions.searchAddress.done({ result: address, params: {} }));
+  dispatch(profileActions.searchAddress.done({ result: address, params: {} }));
 };

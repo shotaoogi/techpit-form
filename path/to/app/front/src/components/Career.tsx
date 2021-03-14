@@ -9,14 +9,18 @@ import useStyles from './styles';
 
 const Career = () => {
   const classes = useStyles();
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
   const careers = useSelector((state: RootState) => state.profile.careers);
   const handleChange = (member: Partial<ICareer>, i: number) => {
-    dispach(profileActions.setCareer({ career: member, index: i }));
+    dispatch(profileActions.setCareer({ career: member, index: i }));
   };
   const handleAddCareer = () => {
-    dispach(profileActions.addCareer({}));
+    dispatch(profileActions.addCareer({}));
   };
+
+  const handleDeleteCareer = (i: number) => {
+    dispatch(profileActions.deleteCareer(i));
+  }
 
   return (
     <>
