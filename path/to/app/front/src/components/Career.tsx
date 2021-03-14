@@ -5,6 +5,7 @@ import { PROFILE } from '../domain/services/profile';
 import { RootState } from '../domain/entity/rootState';
 import { Career as ICareer } from '../domain/entity/career';
 import profileActions from '../store/profile/actions';
+import { exitEmptyCareers } from '../domain/services/career';
 import useStyles from './styles';
 
 const Career = () => {
@@ -21,6 +22,8 @@ const Career = () => {
   const handleDeleteCareer = (i: number) => {
     dispatch(profileActions.deleteCareer(i));
   };
+
+  const isAbleToAddCareer = exitEmptyCareers(careers);
 
   return (
     <>
@@ -94,6 +97,7 @@ const Career = () => {
         onClick={handleAddCareer}
         fullWidth
         variant='outlined'
+        disabled={isAbleToAddCareer}
       >
         職歴を追加
       </Button>
