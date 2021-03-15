@@ -4,7 +4,7 @@ import validationActions from './actions';
 import { stat } from 'fs';
 
 const init: ValidationState = {
-  isstartValidation: false,
+  isStartValidation: false,
   message: {
     name: '',
     description: '',
@@ -26,7 +26,7 @@ const init: ValidationState = {
 const validationReducer = reducerWithInitialState(init)
   .case(validationActions.setIsStartvalidation, (state, payload) => ({
     ...state,
-    isstartValidation: payload
+    isStartValidation: payload
   }))
   .case(validationActions.setValidation, (state, payload) => ({
     ...state,

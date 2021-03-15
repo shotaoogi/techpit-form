@@ -21,6 +21,6 @@ export type Validation = {
 };
 
 export type ValidationState = {
-  isstartValidation: boolean;
+  isStartValidation: boolean;
   message: Validation;
 };
