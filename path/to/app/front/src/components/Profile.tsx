@@ -5,6 +5,7 @@ import Basic from './Basic';
 import Address from './Address';
 import Career from "./Career";
 import useStyles from './styles';
+import College from './College';
 
 const Profile = () => {
   const classes = useStyles();
@@ -29,6 +30,15 @@ const Profile = () => {
           住所
         </Typography>
         <Address />
+        <Typography
+          variant='h4'
+          component='h2'
+          className={classes.title}
+          color='primary'
+        >
+          学歴
+        </Typography>
+        <College />
         <Typography
           variant='h4'
           component='h2'
