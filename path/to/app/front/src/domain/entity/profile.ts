@@ -4,7 +4,7 @@ import { College } from './college';
 import { Career } from './career';
 
 export type Profile = {
-  name: String;
+  name: string;
   description: string;
   birthday: string;
   gender: Gender;
